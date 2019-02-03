@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 
-pd.read_csv('merged_data.csv')
+df = pd.read_csv('merged_data.csv')
 
 app = dash.Dash()
 colors = {
@@ -12,7 +12,7 @@ colors = {
 }
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
     html.H1(
-        children='Hello Dash',
+        children='Geographic Analysis of US Opioid Crisis',
         style={
             'textAlign': 'center',
             'color': colors['text']
@@ -26,8 +26,8 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         id='Graph1',
         figure={
             'data': [
-                {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
-                {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
+                {'x': df['index'][0:10].tolist(), 'y': df['prescriptions_per_100'][0:10].tolist(), 'type': 'bar', 'name': 'SF'},
+                # {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
             ],
             'layout': {
                 'plot_bgcolor': colors['background'],
