@@ -25,3 +25,8 @@ After using Tpot and various grid searches, found a random forest classifier to 
 
 ![](https://github.com/kahartman2/opioid_crisis/blob/master/optimal_model.png)
 
+#### Results 
+
+Investigated feature importance to gain an understanding of the features most highly correlated with drug-related deaths. 
+
+![](https://github.com/kahartman2/opioid_crisis/blob/master/feature_importance.png)
